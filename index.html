@@ -25,8 +25,16 @@
       padding: 2rem;
     }
 
-    main {
+    .page {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      width: 100%;
       max-width: 560px;
+    }
+
+    .page > main,
+    .page > section {
       text-align: center;
       background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(12px);
@@ -35,6 +43,19 @@
       box-shadow:
         0 4px 24px rgba(0, 0, 0, 0.06),
         0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #4f46e5;
+      background: rgba(79, 70, 229, 0.1);
+      border-radius: 999px;
+      padding: 0.35rem 0.75rem;
+      margin-bottom: 1rem;
     }
 
     h1 {
@@ -48,10 +69,51 @@
       background-clip: text;
     }
 
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+      background: linear-gradient(135deg, #4f46e5, #7c3aed);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
     p {
       font-size: 1.125rem;
       color: #4b5563;
       margin-bottom: 2rem;
+    }
+
+    ul {
+      list-style: none;
+      text-align: left;
+    }
+
+    li {
+      font-size: 1.125rem;
+      color: #4b5563;
+      padding: 0.625rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    li:last-child {
+      border-bottom: none;
+    }
+
+    li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #6366f1;
     }
 
     button {
@@ -80,10 +142,22 @@
   </style>
 </head>
 <body>
-  <main>
-    <h1>Hello Vibe Coding</h1>
-    <p>This is my first Cursor project — a simple page to kick off my vibe coding journey.</p>
-    <button type="button">I built this</button>
-  </main>
+  <div class="page">
+    <main>
+      <span class="badge">Project 001</span>
+      <h1>Hello Vibe Coding</h1>
+      <p>This is my first Cursor project — a simple page to kick off my vibe coding journey.</p>
+      <button type="button">I built this</button>
+    </main>
+
+    <section>
+      <h2>What I learned</h2>
+      <ul>
+        <li>How to use Cursor Agent</li>
+        <li>How to track changes with Git</li>
+        <li>How to push a project to GitHub</li>
+      </ul>
+    </section>
+  </div>
 </body>
 </html>
